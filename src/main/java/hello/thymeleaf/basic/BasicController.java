@@ -42,6 +42,20 @@ public class BasicController {
         return "basic/variable";
     }
 
+    @GetMapping("/basic-objects")
+    public String basicObjects(HttpSession session) {
+        session.setAttribute("sessionData", "Hello Session");
+        return "basic/basic-objects";
+    }
+
+    @Component("helloBean")
+    static class HelloBean {
+        public String hello(String data) {
+            return "Hello " + data;
+        }
+    }
+
+
     @Data
     static class User {
         private String username;

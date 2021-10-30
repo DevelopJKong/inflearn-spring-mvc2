@@ -82,6 +82,10 @@ public class BasicController {
 
     }
 
+    @GetMapping("/attribute")
+    public String attribute() {
+        return "basic/attribute";
+    }
 
 
     @Data
